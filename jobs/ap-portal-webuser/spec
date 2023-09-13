@@ -1,8 +1,8 @@
 ---
-name: paas-ta-portal-webuser
+name: ap-portal-webuser
 packages: 
   - apache2
-  - paas-ta-portal-webuser
+  - ap-portal-webuser
 
 templates:
   bin/httpd_ctl: bin/httpd_ctl
@@ -15,11 +15,11 @@ templates:
   config/config.json.erb: config/config.json
 
 provides:
-  - {name: paas-ta-portal-webuser-link, type: paas-ta-portal-webuser, properties: [logPath, webDir, server.port, cf.uaa.clientsecret, monitoring, automaticApproval, cf_api_version, webadmin_ips, ssh_uri, user_app_size_mb, tailLogUri, languageList, limit_request_body, usr_limit_request_body]}
+  - {name: ap-portal-webuser-link, type: ap-portal-webuser, properties: [logPath, webDir, server.port, cf.uaa.clientsecret, monitoring, automaticApproval, cf_api_version, webadmin_ips, ssh_uri, user_app_size_mb, tailLogUri, languageList, limit_request_body, usr_limit_request_body]}
 
 consumes:
   - name: webadmin-link
-    type: paas-ta-portal-webadmin
+    type: ap-portal-webadmin
 
 properties:
   logPath:
@@ -55,9 +55,9 @@ properties:
   tailLogUri:
     default: ''
     description: 'custom tail-log uri : vm mode is empty'
-  paastaType:
+  apType:
     default: 'ap'
-    description: 'paasta deployment type'
+    description: 'ap deployment type'
   languageList:
     default:
     - ko

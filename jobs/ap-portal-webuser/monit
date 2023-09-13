@@ -1,0 +1,5 @@
+check process ap-portal-webuser
+  with pidfile /var/vcap/sys/run/ap-portal-webuser/httpd.pid
+  start program "/var/vcap/jobs/ap-portal-webuser/bin/monit_debugger httpd_ctl '/var/vcap/jobs/ap-portal-webuser/bin/httpd_ctl start'"
+  stop program "/var/vcap/jobs/ap-portal-webuser/bin/monit_debugger httpd_ctl '/var/vcap/jobs/ap-portal-webuser/bin/httpd_ctl stop'"
+  group vcap
