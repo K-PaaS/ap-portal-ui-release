@@ -44,7 +44,7 @@ ap:
   portal:
     api:
       authorization:
-        base64: Basic YWRtaW46b3BlbnBhYXN0YQ==
+        base64: <%= p("portal_default.header_auth") %>
       zuulUrl:
         cfapi: <%= p('api.url') %>/portalapi
         commonapi: <%= p('api.url') %>/commonapi
