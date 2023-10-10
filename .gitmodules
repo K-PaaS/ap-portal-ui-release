@@ -1,6 +1,8 @@
-[submodule "src/paas-ta-portal-webuser"]
-	path = src/paas-ta-portal-webuser
-	url = https://github.com/PaaS-TA/PAAS-TA-PORTAL-webuser
-[submodule "src/paas-ta-portal-webadmin"]
-	path = src/paas-ta-portal-webadmin
-	url = https://github.com/PaaS-TA/PAAS-TA-PORTAL-webadmin
+[submodule "src/ap-portal-webadmin"]
+	path = src/ap-portal-webadmin
+	url = https://github.com/K-PaaS/ap-portal-webadmin
+	branch = kpaas
+[submodule "src/ap-portal-webuser"]
+	path = src/ap-portal-webuser
+	url = https://github.com/K-PaaS/ap-portal-webuser
+	branch = kpaas

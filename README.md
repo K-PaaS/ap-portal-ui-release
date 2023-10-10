@@ -1,30 +1,22 @@
-## PAAS-TA-PORTAL-UI-RELEASE
+## ap-portal-ui-release
 
-### Notices
-  - Use PAAS-TA-PORTAL-UI-RELEASE >= v.2.0.1
-    - PaaS-TA >= v.5.0.2
-    - portal-deployment >= v5.0.2
-  - Use PAAS-TA-PORTAL-UI-RELEASE =< v.2.0.0
-    - PaaS-TA =< v.5.0.1
-    - portal-deployment =< v5.0.1
-
-### PaaS-TA Portal UI Release Configuration
+### Application Platform Portal UI Release Configuration
 
   - haproxy : 1 machine
   - mariadb : 1 machine
-  - paas-ta-portal-webadmin : 1 machine
-  - paas-ta-portal-webuser : 1 machine
+  - ap-portal-webadmin : 1 machine
+  - ap-portal-webuser : 1 machine
 
-### Create PaaS-TA Portal UI Release
-  - Download the latest PaaS-TA Portal UI Release
+### Create Application Platform Portal UI Release
+  - Download the latest Application Platform Portal UI Release
     ```
-    $ git clone https://github.com/PaaS-TA/PAAS-TA-PORTAL-UI-RELEASE.git
-    $ cd PaaS-TA/PAAS-TA-PORTAL-UI-RELEASE
+    $ git clone https://github.com/K-PaaS/ap-portal-ui-release.git
+    $ cd ap-portal-ui-release
     ```
   - Download & Copy "source files" into the src directory
     ```
     ## download source files
-    $ wget -O src.zip  https://nextcloud.paas-ta.org/index.php/s/yF2LEEjRitamdny/download
+    $ wget -O src.zip  https://nextcloud.k-paas.org/index.php/s/w8bQxyWt8j5bxzr/download
 
     ## unzip download source files
     $ unzip src.zip
@@ -43,16 +35,16 @@
       │   └── server-jre-8u121-linux-x64.tar.gz
       ├── mariadb
       │   └── mariadb-10.5.17-linux-x86_64.tar.gz
-      ├── paas-ta-portal-webadmin
-      │   └── paas-ta-portal-webadmin.war
-      └── paas-ta-portal-webuser
-          └── paas-ta-portal-webuser.tar.gz
+      ├── ap-portal-webadmin
+      │   └── ap-portal-webadmin.war
+      └── ap-portal-webuser
+          └── ap-portal-webuser.tar.gz
     ```
-  - Create PaaS-TA Portal UI Release
+  - Create Application Platform Portal UI Release
     ```
     ## <VERSION> :: release version (e.g. 2.5.0)
-    ## <RELEASE_TARBALL_PATH> :: release file path (e.g. /home/ubuntu/workspace/paasta-portal-ui-release-<VERSION>.tgz)
-    $ bosh -e <bosh_name> create-release --name=paasta-portal-ui-release --sha2 --version=<VERSION> --tarball=<RELEASE_TARBALL_PATH> --force
+    ## <RELEASE_TARBALL_PATH> :: release file path (e.g. /home/ubuntu/workspace/ap-portal-ui-release-<VERSION>.tgz)
+    $ bosh -e <bosh_name> create-release --name=ap-portal-ui-release --sha2 --version=<VERSION> --tarball=<RELEASE_TARBALL_PATH> --force
     ```
 ### Deployment
-- https://github.com/PaaS-TA/portal-deployment
+- https://github.com/K-PaaS/portal-deployment

@@ -1,5 +1,5 @@
 ---
-name: paas-ta-portal-webadmin
+name: ap-portal-webadmin
 
 templates:
   bin/service_ctl.erb: bin/service_ctl
@@ -11,22 +11,21 @@ templates:
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
 packages:
   - java
-  - paas-ta-portal-webadmin
+  - ap-portal-webadmin
 
 provides:
-  - {name: paas-ta-portal-webadmin-link, type: paas-ta-portal-webadmin, properties: [java_opts, infra.admin.enable, server.port, eureka.port, api.url, gateway.port, mariadb.port, mariadb.admin_user.password, languageList]}
+  - {name: ap-portal-webadmin-link, type: ap-portal-webadmin, properties: [java_opts, server.port, eureka.port, api.url, gateway.port, mariadb.port, mariadb.admin_user.password, languageList]}
 
 consumes:
   - name: mariadb-link
     type: mariadb
 
 properties:
+  portal_default.header_auth:
+    description: portal header auth
   java_opts:
     description: 'Luncher Java option'
     default: '-Xms512m -Xmx1024m -XX:ReservedCodeCacheSize=240m -XX:+UseCompressedOops -Dfile.encoding=UTF-8 -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -XX:+HeapDumpOnOutOfMemoryError -XX:-OmitStackTraceInFastThrow -Xverify:none -XX:ErrorFile=/var/vcap/sys/log/java_error_in_idea_%p.log -XX:HeapDumpPath=/var/vcap/sys/log/java_error_in_idea.hprof'
-  infra.admin.enable:
-    description: 'Change it to true only if an infra-admin has been created.'
-    default: false
   server.port:
     description: 'Enter the Service Port'
     default: '8090'

@@ -1,0 +1,7 @@
+---
+name: ap-portal-webadmin
+
+dependencies: []
+
+files:
+- ap-portal-webadmin/ap-portal-webadmin.war

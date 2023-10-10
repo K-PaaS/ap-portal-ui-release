@@ -1,24 +1,7 @@
 spring:
   application:
       name: PortalWebAdmin
-<% if p("infra.admin.enable") %>
-    boot:
-      #Spring boot admin settings
-      admin:
-        routes:
-          endpoints: env,metrics,trace,info,trace,heapdump,hystrix.stream,docs
-          #Timeintervalin ms to update the status of App
-        monitor:
-          perio: 10000
-          #LifeTime of App status in ms.
-          status-lifetime: 10000
-          #Connection Timeout in ms when App's status and info
-          connect-timeout: 2000
-          #Read Timeout in ms when App's status and info
-          read-timeout: 5000
-        metadata-keys-to-sanitize: .password$,.*secret$,.*key$,.$token$,.credentials.,.*vcap_services$
-<% end %>
-  thymeleaf:
+thymeleaf:
     cache: true # false : 서버 재시작 없이 새로고침.  개발서버 이상부터는 true로 설정.
 
     check-template: true
@@ -57,30 +40,11 @@ datasource:
     naming:
       strategy: org.hibernate.dialect.MySQL5Dialect
 
-<% if p("infra.admin.enable") %>
-##INFRA_ADMIN Settings
-project:
-  name: paasta-web-admin
-  artifactId: paasta-web-admin
-  description: paasta-web-admin
-info:
-  app:
-    encoding: Encoding - UTF-8
-  java:
-    source: Source - java ver
-    target: Instance1 - Java ver
-  spring:
-    profiles: ${spring.profiles.active:default}
-  build:
-    name: ${project.name}
-    artifact: ${project.artifactId}
-    description: ${project.description}
-<% end %>
-paasta:
+ap:
   portal:
     api:
       authorization:
-        base64: Basic YWRtaW46b3BlbnBhYXN0YQ==
+        base64: <%= p("portal_default.header_auth") %>
       zuulUrl:
         cfapi: <%= p('api.url') %>/portalapi
         commonapi: <%= p('api.url') %>/commonapi
@@ -89,5 +53,5 @@ paasta:
       type: swift
 logging:
   level:
-          org.openpaas.paasta.portal.web.admin.exception.GlobalControllerExceptionHandler: DEBUG
+          org.openpaas.portal.web.admin.exception.GlobalControllerExceptionHandler: DEBUG
 languageList: <%= p('languageList') %>

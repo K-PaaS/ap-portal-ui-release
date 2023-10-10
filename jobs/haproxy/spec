@@ -17,10 +17,10 @@ provides:
   - {name: haproxy-link, type: haproxy, properties: []}
 
 consumes:
-  - name: paas-ta-portal-webuser-link
-    type: paas-ta-portal-webuser
-  - name: paas-ta-portal-webadmin-link
-    type: paas-ta-portal-webadmin
+  - name: ap-portal-webuser-link
+    type: ap-portal-webuser
+  - name: ap-portal-webadmin-link
+    type: ap-portal-webadmin
   - name: mariadb-link
     type: mariadb
 

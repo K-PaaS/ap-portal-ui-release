@@ -1,7 +1,0 @@
----
-name: paas-ta-portal-webadmin
-
-dependencies: []
-
-files:
-- paas-ta-portal-webadmin/paas-ta-portal-webadmin.war

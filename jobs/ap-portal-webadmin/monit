@@ -1,0 +1,5 @@
+check process ap-portal-webadmin
+  with pidfile /var/vcap/sys/run/ap-portal-webadmin/ap-portal-webadmin.pid
+  start program "/var/vcap/jobs/ap-portal-webadmin/bin/monit_debugger service_ctl '/var/vcap/jobs/ap-portal-webadmin/bin/service_ctl start'"
+  stop program "/var/vcap/jobs/ap-portal-webadmin/bin/monit_debugger service_ctl '/var/vcap/jobs/ap-portal-webadmin/bin/service_ctl stop'"
+  group vcap
