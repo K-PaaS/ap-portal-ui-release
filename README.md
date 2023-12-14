@@ -16,7 +16,7 @@
   - Download & Copy "source files" into the src directory
     ```
     ## download source files
-    $ wget -O src.zip  https://nextcloud.k-paas.org/index.php/s/7iALyz3QWTCiyQA/download
+    $ wget -O src.zip  https://nextcloud.k-paas.org/index.php/s/QKswEeam7ty5mcy/download
 
     ## unzip download source files
     $ unzip src.zip
@@ -44,7 +44,7 @@
     ```
     ## <VERSION> :: release version (e.g. 2.5.0)
     ## <RELEASE_TARBALL_PATH> :: release file path (e.g. /home/ubuntu/workspace/ap-portal-ui-release-<VERSION>.tgz)
-    $ bosh -e <bosh_name> create-release --name=ap-portal-ui-release --sha2 --version=<VERSION> --tarball=<RELEASE_TARBALL_PATH> --force
+    $ bosh -e <bosh_name> create-release --name=ap-portal-ui --sha2 --version=<VERSION> --tarball=<RELEASE_TARBALL_PATH> --force
     ```
 ### Deployment
 - https://github.com/K-PaaS/portal-deployment
